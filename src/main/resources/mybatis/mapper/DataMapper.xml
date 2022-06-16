@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.mapper.DataMapper">
+
+    <select id="selectSalt" resultType="String" >
+        select  salt from data where data=#{data} and password=#{password}
+    </select>
+
+    <insert id="addData" parameterType="Data">
+        insert into data (text,data,password,salt) values(#{text},#{data},#{password},#{salt})
+    </insert>
+
+
+
+</mapper>
